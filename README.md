@@ -4,14 +4,14 @@ This project is a frontend assignment submission for the **Frontend Developer In
 UI is inspired by the reference design and adapted for clarity and usability.
 
 
-## 🚀 Tech Stack
+## Tech Stack
 - React (Vite)
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
 - React Query
 
-## ✨ Features Implemented
+## Features Implemented
 - Blog listing with category tags
 - Category-based filtering
 - Search blogs by title and description
