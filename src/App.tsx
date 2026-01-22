@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import BlogList from "./components/BlogList";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [category, setCategory] = useState<string>("ALL");
+
+  const categories = ["ALL", "FINANCE", "TECH", "CAREER", "EDUCATION", "REGULATIONS"];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="p-8 bg-gray-100 min-h-screen max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold mb-2">CA Monk Blog App</h1>
+      <p className="text-muted-foreground mb-8">
+        Insights on finance, tech, career & education
       </p>
-    </>
-  )
-}
 
-export default App
+      {/* Filter Bar */}
+      <div className="flex gap-3 mb-8 flex-wrap">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategory(cat)}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium transition
+              ${
+                category === cat
+                  ? "bg-black text-white"
+                  : "bg-white border hover:bg-gray-100"
+              }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <BlogList selectedCategory={category} />
+    </div>
+  );
+}
