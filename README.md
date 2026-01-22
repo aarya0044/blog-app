@@ -1,6 +1,8 @@
 # CA Monk – Blog App (Frontend Assignment)
 
 This project is a frontend assignment submission for the **Frontend Developer Intern** role at **CA Monk**.
+UI is inspired by the reference design and adapted for clarity and usability.
+
 
 ## 🚀 Tech Stack
 - React (Vite)
